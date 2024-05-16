@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Fylo Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      max-height: 40px;
+    }
+
+    .nav-buttons a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hero-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .hero-content p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .email-form {
+      display: flex;
+    }
+
+    .email-form input {
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      flex: 1;
+    }
+
+    .email-form button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+    }
+
+    .productivity-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 0;
+      position: relative;
+    }
+
+    .productivity-content {
+      max-width: 50%;
+    }
+
+    .productivity-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .productivity-content p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .productivity-content a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .productivity-image img {
+      max-width: 100%;
+    }
+
+    .testimonial-section {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 50%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .testimonial-section blockquote {
+      font-size: 1rem;
+      margin: 0 0 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .testimonial-section footer {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-section footer img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .early-access {
+      text-align: left;
+      padding: 50px 0;
+      background-color: #6c63ff;
+      color: #fff;
+    }
+
+    .early-access h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .early-access p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .early-access .email-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .early-access .email-form input[type="email"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .early-access .email-form .check-email {
+      margin-bottom: 10px;
+    }
+
+    .early-access .email-form button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background: #0a0035;
+      color: #fff;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .footer-logo h2 {
+      margin: 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .contact p {
+      margin: 5px 0;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-nav ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social a {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .social img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .attribution {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Fylo Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="#">Features</a>
+        <a href="#">Team</a>
+        <a href="#">Sign In</a>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>All your files in one secure location, accessible anywhere.</h1>
+        <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
+        <form class="email-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Get Started</button>
+        </form>
+      </div>
+      <div class="hero-image">
+        <img src="./images/illustration-1.svg" alt="Hero Illustration">
+      </div>
+    </section>
+
+    <section class="productivity-section">
+      <div class="productivity-content">
+        <h2>Stay productive, wherever you are</h2>
+        <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+        <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+        <a href="#">See how Fylo works</a>
+        <div class="testimonial-section">
+          <blockquote>
+            "Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine."
+          </blockquote>
+          <footer>
+            <img src="./images/avatar-testimonial.jpg" alt="Kyle Burton">
+            <cite>Kyle Burton, Founder & CEO, Huddle</cite>
+          </footer>
+        </div>
+      </div>
+      <div class="productivity-image">
+        <img src="./images/illustration-2.svg" alt="Productivity Illustration">
+      </div>
+    </section>
+
+    <section class="early-access">
+      <h2>Get early access today</h2>
+      <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+      <form class="email-form">
+        <input type="email" placeholder="email@example.com" required>
+        <span class="check-email">Please check your email</span>
+        <button type="submit">Get Started For Free</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>Fylo</h2>
+        </div>
+        <div class="footer-content">
+          <div class="contact">
+            <p>Phone: +1-543-123-4567</p>
+            <p>Email: example@fylo.com</p>
+            <p>Address: 123 Example Street, Example City, EX 12345</p>
+          </div>
+          <div class="footer-nav">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="social">
+            <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name</a>.
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+  <!-- 
+
+  
+
+  
+
+  Get Started
+
+  
+
+  
+
+  
+
+  See how Fylo works
+
+  Fylo has improved our team productivity by an order of magnitude. Since 
+  making the switch our team has become a well-oiled collaboration machine.
+
+  Kyle Burton
+  Founder & CEO, Huddle
+
+  Get early access today
+
+  It only takes a minute to sign up and our free starter tier is extremely generous. 
+  If you have any questions, our support team would be happy to help you.
+
+  Get Started For Free
+
+  Phone: +1-543-123-4567
+  example@fylo.com
+
+  About Us
+  Jobs
+  Press
+  Blog
+
+  Contact Us
+  Terms
+  Privacy -->
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
